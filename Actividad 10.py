@@ -19,3 +19,15 @@ for i in range(cantidad_productos):
                   "L\n"
                   "XL\n"
                   "Ingrese la talla: ")
+    while True:
+        precio = input("Ingrese el precio unitario del producto: ")
+        if precio < 0:
+            print("El precio debe tener un valor mayor a Q0.00")
+        elif precio > 0:
+            break
+    while True:
+        stock = int(input("¿Cuánt@s hay en stock?: "))
+        if stock < 0:
+            print("El stock debe ser una cantidad positiva")
+        elif stock > 0:
+            break
