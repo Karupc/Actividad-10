@@ -1,29 +1,29 @@
 inventario = {}
+cantidad_productos = int(input("Ingrese la cantidad de productos que desea ingresar: "))
+for i in range(cantidad_productos):
+    while True:
+        codigo = input("Ingrese el código del producto: ")
+        if codigo not in inventario:
+            break
+        else:
+            print("Este código ya existe, ingrese otro")
+    nombre = input("Ingrese el nombre del producto: ")
+    categoria = input("CATEGORÍAS\n- Hombre\n- Mujer\n- Niño\n¿Qué categoría es?: ")
+    talla = input("TALLAS\nS\nM\nL\nXL\nIngrese la talla: ")
+    while True:
+        precio = float(input("Ingrese el precio unitario del producto: "))
+        if precio <= 0:
+            print("El precio debe ser mayor a Q0.00")
+        else:
+            break
+    while True:
+        stock = int(input("¿Cuánt@s hay en stock?: "))
+        if stock <= 0:
+            print("El stock debe ser una cantidad positiva")
+        else:
+            break
+    inventario[codigo] = [nombre, categoria, talla, precio, stock]
 while True:
-    cantidad_productos = int(input("Ingrese la cantidad de productos que desea ingresar: "))
-    for i in range(cantidad_productos):
-        while True:
-            codigo = input("Ingrese el código del producto: ")
-            if codigo not in inventario:
-                break
-            else:
-                print("Este código ya existe, ingrese otro")
-        nombre = input("Ingrese el nombre del producto: ")
-        categoria = input("CATEGORÍAS\n- Hombre\n- Mujer\n- Niño\n¿Qué categoría es?: ")
-        talla = input("TALLAS\nS\nM\nL\nXL\nIngrese la talla: ")
-        while True:
-            precio = float(input("Ingrese el precio unitario del producto: "))
-            if precio <= 0:
-                print("El precio debe ser mayor a Q0.00")
-            else:
-                break
-        while True:
-            stock = int(input("¿Cuánt@s hay en stock?: "))
-            if stock <= 0:
-                print("El stock debe ser una cantidad positiva")
-            else:
-                break
-        inventario[codigo] = [nombre, categoria, talla, precio, stock]
     print("---OPCIONES---\n"
           "1.- Mostrar lista completa de productos\n"
           "2.- Mostrar detalles de un producto por su código\n"
